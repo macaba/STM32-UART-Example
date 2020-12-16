@@ -1,6 +1,6 @@
 # STM32-UART-Example
 
-- Uses UART idle timeout interrupt, fires when line is idle for a short duration.
+- Uses UART idle timeout interrupt, fires when RX line is idle for a short duration.
 - STM32CubeMX & HAL
 - Bare metal (no RTOS)
 - Set up UART with circular DMA channel
