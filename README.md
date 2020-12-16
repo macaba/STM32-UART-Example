@@ -75,6 +75,15 @@ void LPUART1_IRQHandler(void)
 
 ## main.c
 
+Before main loop
+
+```
+  HAL_UART_Receive_DMA(&hlpuart1, uartRxDmaBuffer, RXDMABUFFERSIZE);
+  __HAL_UART_ENABLE_IT(&hlpuart1, UART_IT_IDLE);	//Start this after DMA configured, otherwise idle interrupt will malfunction on the first call
+```
+
+In main loop
+
 ```
 	  uint32_t value;
 	  if(uartRxIdleTimeout)
